@@ -1,8 +1,15 @@
-import { Router  } from "express";
-const route =  Router();
+import { Router } from "express";
+const route = Router();
 
-route.get("/test", (req,  res) => {
-	return res.status(200).json({hello:"hola"});
-});
+import controllers from "../controllers/auth";
+import middlewares from "../middlewares/auth";
 
-export  default route ;
+route.post("/login", [
+	...middlewares.login
+], controllers.login);
+
+route.post("/check/token", [
+	...middlewares.checkToken
+], controllers.checkToken);
+
+export default route;
