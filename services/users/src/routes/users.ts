@@ -10,4 +10,5 @@ route.post("/newuser", [
 ], controllers.createNewUser);
 
 
+
 export default route;

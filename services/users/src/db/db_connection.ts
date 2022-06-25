@@ -1,12 +1,21 @@
 import { Sequelize } from "sequelize";
+import { getEnvVariable } from "../helpers";
+
+const host = getEnvVariable("HOST"),
+    database = getEnvVariable("DATA_BASE"),
+    password = getEnvVariable("DB_PASSWORD"),
+    username = getEnvVariable("DB_USERNAME"),
+    port = Number(getEnvVariable("DB_PORT"));
+
+
 
 const connection = new Sequelize({
-    host: "localhost",
-    database: "users_service",
-    password: "root",
-    username: "postgres",
+    host,
+    database,
+    password,
+    username,
     dialect: "postgres",
-    port: 4000
+    port
 });
 
 
