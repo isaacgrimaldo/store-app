@@ -4,8 +4,6 @@ import { checkName } from "./helpers";
 
 const middlewares = {
     createNewUser: [
-        check("user_id", "is require").notEmpty(),
-        check("user_id", "should be a string").isString(),
         check("name", "is require").notEmpty(),
         check("name", "should be a string").notEmpty(),
         check("name", "should have min 6 and 16 characters").isLength({ min: 6, max: 16 }),
