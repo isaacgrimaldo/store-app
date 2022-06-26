@@ -13,7 +13,6 @@ export interface Token {
 
 export interface ShoppingCar {
     user_id: string
-    total: number
     id_shopping_car: string
     active: true
     items: Beer[]

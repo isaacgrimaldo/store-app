@@ -5,10 +5,6 @@ const ShoppingCar = new Schema({
         type: String,
         required: [true, "is required"]
     },
-    total: {
-        type: Number,
-        default: 0
-    },
     id_shopping_car: {
         type: String,
         unique: [true, "should be unique"],
